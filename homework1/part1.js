@@ -10,8 +10,8 @@ price = 2000;
 console.log(`Chosen is ${name} which costs ${price}`)
 
 //Task2
-// let userName = prompt('Enter name');
-// let greeting = 'Greetings';
+let userName = prompt('Enter name');
+let greeting = 'Greetings';
 
-// console.log(`${userName}, ${greeting}`)
+console.log(`${userName}, ${greeting}`)
 
