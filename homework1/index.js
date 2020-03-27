@@ -84,10 +84,119 @@ console.log("ToFix2", random.toFixed(2));
 console.log("ToFix1", random.toFixed(1));
 console.log("ToFix0", random.toFixed(0));
 
+// Logical operators 
+// && = and
+const KPI = 30;
+let fact = KPI > 20 && KPI < 31;
+//               true && true
+console.log(fact); //true
 
+fact = KPI > 20 && KPI < 29;
+//         true && false
+console.log(fact);// false
 
+fact = KPI < 29 && KPI > 20;
+//         false && true
+console.log(fact);// false
 
+// Only true if: true && true
+//Gives last true if all true
 
+console.log("cat" && "dog" && "parrot");// parrot
+console.log("cat" && 1 > 2 && "parrot");// false
+console.log("cat" && 0 && "parrot");// 0
+
+// || = or
+
+fact = KPI > 20 || KPI < 31;
+//         true || true
+console.log(fact)//true
+
+fact = KPI > 20 || KPI < 29;
+//         true || false
+console.log(fact);// true
+
+fact = KPI < 29 || KPI > 20;
+//         false|| true
+console.log(fact);// true
+
+fact = KPI > 30 || KPI < 29;
+//        false || false
+console.log(fact);// false
+
+// Only false if false || false
+
+console.log("cat" || "dog" || "parrot");// cat
+console.log("cat" || 1 > 2 || "parrot");// cat
+console.log(1>2 || "cat" || "parrot");// cat
+
+// Puts first true into console
+
+// ! = not; reverses value
+console.log(!true); //false
+console.log(!false) //true
+console.log(!!true); //true
+console.log(!!false) //false
+
+console.log(!1); //false
+console.log(!0) //true
+console.log(!!1); //true
+console.log(!!0) //false
+
+console.log(!null); //true
+console.log(!undefined) //true
+console.log(!!null); //false
+console.log(!!undefined) //false
+
+let age = 12;
+let group;
+
+// if (age > 18) {
+//     //If clause and action. If clause happens if true
+//     console.log("You are an adult")
+// } 
+
+// if (age > 18) {
+//     //if - else clause
+//     console.log("You are an adult")
+// } else {
+//     //else clause happens if false
+//     console.log("You are a child")
+
+// }
+
+if (age > 18) {
+    console.log("You are an adult")
+} else if (14 < age && age < 18) {
+    console.log("You are an teenager")
+} else if (6 < age && age < 14) {
+    console.log("You are an child")
+} else {
+    console.log("I don't know, dead?")
+}
+// use && or || in case of more than one operations
+
+// let day = prompt("Enter day of the week");
+// console.log(day)
+// let weekday;
+// if (day === "Saturday" || day === "Sunday") {
+//       weekday = "holiday";
+//     } else if (
+//       day === "Monday" ||
+//       day === "Tuesday" ||
+//       day === "Wednesday" ||
+//       day === "Thursday" ||
+//       day === "Friday"
+//     ) {
+//       weekday = "workday";
+//     } else {
+//       weekday = "Invalid entered data";
+//     }
+//     console.log(day);
+//     alert(`${day} is ${weekday}`);
+    
+// let message = confirm('Are you real?')
+// console.log(message) //If click OK = true,  if click Cancel = false
 
 
 
