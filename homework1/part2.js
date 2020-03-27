@@ -18,21 +18,27 @@ console.log(var1 > var2 > var3)//false, 0 not > true, because true = 1
 //2
 let val;
 console.log(val);//undefined
+console.log(isNaN(val));
 
 val = "River";
 console.log(typeof val);//string
+console.log(isNaN(val));//true
 
 val = "Mountain";
 console.log(typeof val);//sting
+console.log(isNaN(val));//true
 
 val = 232;
 console.log(typeof val);//number
+console.log(isNaN(val));//false
 
 val = true;
 console.log(typeof val);//boolean
+console.log(isNaN(val));//false
 
 val = null;
 console.log(typeof val);//object
+console.log(isNaN(val));//false
 
 //3
 let alpha = 0.2;
@@ -49,8 +55,8 @@ tetra = '13.34em';
 console.log(tetra);//13.34em
 
 //5
-console.log(Math.max(2, 34, 99, 3, 22, 36, 733, 18));
-console.log(Math.min(2, 34, 99, 3, 22, 36, 733, 18));
+console.log(Math.max(2, 34, 99, 3, 22, 36, 733, 18));//733
+console.log(Math.min(2, 34, 99, 3, 22, 36, 733, 18));//2
 
 //6
 let random = (Math.random() * (19 - 3) + 3).toFixed(2);
