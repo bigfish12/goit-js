@@ -134,5 +134,124 @@ counterA.increment();
 counterA.increment();
 
 
+function anotherFunc() {
+    console.log(this);
+}
+
+anotherFunc();//undefined
+
+
+const felix = {
+    name: "Felix",
+    showThis() {
+        console.log(this);
+    },
+    showName() {
+        console.log(this.name);
+    },
+};
+
+felix.showThis();//{name: "Felix", showThis: ƒ, showName: ƒ}
+felix.showName();//Felix
+
+function showThis() {
+    console.log(this);
+}
+showThis();
+
+const user = {
+    name: "Joe",
+}
+
+user.newMethod = function() {
+    console.log(this);
+}
+user.newMethod();
+
+user.showContext = showThis;
+user.showContext();
+
+const hilton = {
+    name: "Hilton",
+    showThis() {
+        console.log(this);
+    },
+};
+
+const fn = function (callback) {
+    callback();
+};
+
+fn(hilton.showThis);
+
+const arrowThis = () => {
+    console.log(this);
+}
+arrowThis();
+
+const user1 = {
+    name: "Alex",
+};
+
+user1.showContext = arrowThis;
+user1.showContext();
+
+const hotel2 = {
+    name: "Holiday Inn",
+    showThis() {
+        const fn = () => {
+            console.log(this);
+        };  
+        fn();
+        console.log(this);
+    },
+};
+hotel2.showThis();
+
+const greet = function() {
+    return `Welcome to ${this.name} hotel!`
+}
+const hotel4 = {name: "Four Seasons"};
+console.log(greet.call(hotel4));
+console.log(greet.apply(hotel4));
+
+
+const greet1 = function (guest, stars) {
+    return `${guest}, welcome to ${stars}-star ${this.name}!`;
+}
+const motel = {name: "Sunlight Motel"};
+
+console.log(greet1.call(hotel4, "Joe", 5));
+console.log(greet1.call(motel, "Joe", 3));
+
+console.log(greet1.apply(hotel4, ["Joe", 5]));
+console.log(greet1.apply(motel, ["Joe", 4]));
+
+
+const greet3 = function(guest) {
+    return `${guest}, welcome to ${this.name}`
+}
+const hotel7 = {name: "Caesar"};
+const hotelGreeter = greet3.bind(hotel7, "Joe");
+console.log(hotelGreeter());
+
+
+const hotel8 = {
+    name: "Rixos",
+    showThis() {
+        console.log(this);
+    },
+} ;
+
+const fn1 = function (callback) {
+    callback();
+}
+
+fn1(hotel8.showThis.bind(hotel8))
+
+
+
+
+
 
 
